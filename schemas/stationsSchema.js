@@ -47,15 +47,32 @@ export default gql`
     }
     
     extend type Mutation {
+    
     addStation(
-    Connections: [Connections]
-    Postcode: String
-    Title: String
-    AddressLine1: String
-    StateOrProvince: String
-    Town: String
-    Location: newLocation
+      Title: String!,
+      Town: String!,
+      AddressLine1: String!,
+      StateOrProvince: String!,
+      Postcode: String!,
+      Location: newLocation
+      Connections: [Connections],
+    ): Station!,
+    
+   modifyStation(
+      id: ID!,
+      Title: String,
+      Town: String,
+      AddressLine1: String,
+      StateOrProvince: String,
+      Postcode: String,
+      Location: newLocation,
+      Connections: [Connections],
+    ): Station!,
+
+    deleteStation(
+      id: ID!
     ): Station
+
    
     }
     `;

@@ -16,7 +16,8 @@ const connectionsSchema = new Schema ({
     LevelID: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Level'
-    }
+    },
+    Quantity: Number,
 });
 
 export default mongoose.model('Connections', connectionsSchema);
